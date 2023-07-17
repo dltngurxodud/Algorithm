@@ -1,12 +1,10 @@
 import java.util.Scanner;
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        int M = sc.nextInt();
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		int M = sc.nextInt();
 		int[][] arrA = new int[N][M];
-		int[][] arrB = new int[N][M];
-		int[][] arrC = new int[N][M];
 
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < M; j++) {
@@ -14,23 +12,13 @@ public class Main {
 			}
 		}
 
+		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < M; j++) {
-				arrB[i][j] = sc.nextInt();
+				sb.append(arrA[i][j] + sc.nextInt() + (j == M-1 ? "" : " "));
 			}
+			sb.append("\n");
 		}
-
-		for (int i = 0; i < N; i++) {
-			for (int j = 0; j < M; j++) {
-				arrC[i][j] = arrA[i][j] + arrB[i][j];
-			}
-		}
-
-		for (int i = 0; i < N; i++) {
-			for (int j = 0; j < M; j++) {
-				System.out.print(arrC[i][j] + (j == M-1 ? "" : " "));
-			}
-			System.out.println();
-		}
-    }
+		System.out.println(sb);
+	}
 }
